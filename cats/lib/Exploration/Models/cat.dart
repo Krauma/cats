@@ -1,5 +1,10 @@
+import 'dart:convert';
+
+List<Cat> catsFromJson(String str) =>
+    List<Cat>.from(json.decode(str).map((x) => Cat.fromJson(x)));
+
 class Cat {
-  int id;
+  String id;
   String url;
 
   Cat({

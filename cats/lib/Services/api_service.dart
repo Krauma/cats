@@ -7,14 +7,14 @@ import 'package:http/http.dart' as http;
 class ApiService {
   static var client = http.Client();
 
-  static Future<Cat?> fetchProducts() async {
+  static Future<List<Cat>?> fetchCats() async {
     var response = await client
         .get(Uri.parse('https://api.thecatapi.com/v1/images/search'),headers: {
           'x-api-key': Constants.apiKey,
         });
     if (response.statusCode == 200) {
-      var json = jsonDecode(response.body);
-      return Cat.fromJson(json);
+     var jsonString = response.body;
+      return catsFromJson(jsonString);
     } else {
       return null;
     }

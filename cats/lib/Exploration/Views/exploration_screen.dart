@@ -1,4 +1,6 @@
+import 'package:cats/Exploration/Controllers/exploration_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'exploration_clip_path.dart';
 
@@ -10,6 +12,9 @@ class ExplorationScreen extends StatefulWidget {
 }
 
 class _ExplorationScreenState extends State<ExplorationScreen> {
+  final ExplorationController explorationController =
+      Get.put(ExplorationController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +39,7 @@ class _ExplorationScreenState extends State<ExplorationScreen> {
                     width: double.infinity,
                     height: MediaQuery.of(context).size.height / 1.6,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      //color: Colors.blue,
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
@@ -45,6 +50,18 @@ class _ExplorationScreenState extends State<ExplorationScreen> {
                         ),
                       ],
                     ),
+                    child: Obx(() {
+                      if (explorationController.isLoading.value) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      } else {
+                        return Image.network(
+                          explorationController.fetchedCats.first.url,
+                          fit: BoxFit.cover,
+                        );
+                      }
+                    }),
                   ),
                 ),
                 Align(
@@ -69,7 +86,7 @@ class _ExplorationScreenState extends State<ExplorationScreen> {
                           shape: CircleBorder(),
                           padding: EdgeInsets.all(20),
                           primary: Colors.orange,
-                          onPrimary: Colors.red, 
+                          onPrimary: Colors.red,
                         ),
                       )
                     ],
