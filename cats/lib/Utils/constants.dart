@@ -7,4 +7,5 @@ class Constants {
       colors: [Colors.orange, Colors.red],
       begin: Alignment.bottomCenter,
       end: Alignment.topCenter);
+  static String baseUrl = 'https://api.thecatapi.com/v1';
 }

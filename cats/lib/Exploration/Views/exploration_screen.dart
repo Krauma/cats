@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:cats/Exploration/Controllers/exploration_controller.dart';
-import 'package:cats/Utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +16,7 @@ class _ExplorationScreenState extends State<ExplorationScreen> {
   final ExplorationController explorationController =
       Get.put(ExplorationController());
 
-  final _animationDuration = Duration(milliseconds: 900);
+  final _animationDuration = const Duration(milliseconds: 900);
   var _isShowingConfirmation = false;
   var _isFavorite = false;
 
@@ -69,7 +67,7 @@ class _ExplorationScreenState extends State<ExplorationScreen> {
                         fontSize: 26,
                         fontWeight: FontWeight.w400)),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(4, 34, 4, 20),
+                  padding: const EdgeInsets.fromLTRB(4, 34, 4, 20),
                   child: Container(
                     width: double.infinity,
                     height: MediaQuery.of(context).size.height / 1.6,
