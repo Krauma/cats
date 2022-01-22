@@ -1,3 +1,4 @@
+import 'package:cats/Search/Models/cat_detail_view_model.dart';
 import 'package:cats/Search/Models/cat_list_view_model.dart';
 import 'package:cats/Search/Views/cat_details_screen.dart';
 import 'package:cats/Utils/constants.dart';
@@ -14,7 +15,7 @@ class CatCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(() => CatDetailsScreen(cat: viewModel.catSearchResult));
+        Get.to(() => CatDetailsScreen(viewModel: CatDetailViewModel(catSearchResult: viewModel.catSearchResult)));
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 16),

@@ -1,4 +1,3 @@
-import 'package:cats/Search/Models/cat_image.dart';
 import 'package:cats/Search/Models/cat_search_result.dart';
 import 'package:cats/Services/api_service.dart';
 import 'package:get/state_manager.dart';
