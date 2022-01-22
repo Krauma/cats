@@ -16,7 +16,7 @@ class CatDetailViewModel {
     if (catSearchResult.origin == null) {
       return "Unkown origin";
     }
-    return "From: " + catSearchResult.origin!;
+    return catSearchResult.origin!;
   }
 
   String description() {
