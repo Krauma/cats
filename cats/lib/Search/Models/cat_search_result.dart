@@ -30,6 +30,7 @@ class CatSearchResult {
   int? strangerFriendly;
   int? suppressedTail;
   String? temperament;
+  String? url;
 
   CatSearchResult(
       {this.adaptability,
@@ -55,7 +56,8 @@ class CatSearchResult {
       this.socialNeeds,
       this.strangerFriendly,
       this.suppressedTail,
-      this.temperament});
+      this.temperament,
+      this.url});
 
   factory CatSearchResult.fromJson(Map<String, dynamic> json) {
     return CatSearchResult(
@@ -82,6 +84,7 @@ class CatSearchResult {
         socialNeeds: json['socialNeeds'],
         strangerFriendly: json['strangerFriendly'],
         suppressedTail: json['suppressedTail'],
-        temperament: json['temperament']);
+        temperament: json['temperament'],
+        url: json['url']);
   }
 }

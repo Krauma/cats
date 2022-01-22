@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:cats/Exploration/Models/cat.dart';
 import 'package:cats/Exploration/Models/cat_vote.dart';
+import 'package:cats/Search/Models/cat_image.dart';
 import 'package:cats/Search/Models/cat_search_result.dart';
 import 'package:cats/Utils/constants.dart';
 import 'package:http/http.dart' as http;
