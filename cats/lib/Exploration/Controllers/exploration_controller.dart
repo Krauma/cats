@@ -6,6 +6,8 @@ import 'package:get/state_manager.dart';
 class ExplorationController extends GetxController {
   var isLoading = true.obs;
   var fetchedCats = List<Cat>.empty().obs;
+  var isShowingConfirmation = false.obs;
+  var isFavorite = false.obs;
 
   @override
   void onInit() {
@@ -27,11 +29,26 @@ class ExplorationController extends GetxController {
 
   Future<int> voteCat(CatVote catVote) async {
     try {
-      isLoading(true);
+      isShowingConfirmation(true);
       var response = await ApiService.voteCat(catVote);
       return response;
     } finally {
-      isLoading(false);
+      isShowingConfirmation(false);
+      fetchCat();
     }
+  }
+
+  void handleVoteClick(bool isfavorite, String id) {
+    var catVote = CatVote(imageId: id, value: isfavorite ? 1 : 0);
+    isFavorite(isfavorite);
+    voteCat(catVote);
+ 
+
+ /*   Timer(Duration(seconds: 1), () {
+      setState(() {
+        _isShowingConfirmation = false;
+        explorationController.fetchCat();
+      });
+    });*/
   }
 }

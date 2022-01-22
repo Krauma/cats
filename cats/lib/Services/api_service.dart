@@ -22,14 +22,15 @@ class ApiService {
   }
 
   static Future<int> voteCat(CatVote catVote) async {
-    var json = catVote.toJson();
+    var catDictionary = catVote.toJson();
+    var body = jsonEncode(catDictionary);
 
     var response = await client.post(Uri.parse(Constants.baseUrl + '/votes'),
         headers: {
           'Content-Type': 'application/json',
           'x-api-key': Constants.apiKey,
         },
-        body: json);
+        body: body);
     return response.statusCode;
   }
 }
