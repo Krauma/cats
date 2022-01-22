@@ -1,9 +1,31 @@
+import 'package:cats/Search/Controllers/search_controller.dart';
 import 'package:cats/Utils/SharedViews/shared_clip_path.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SearchScreen extends StatelessWidget {
-  const SearchScreen({Key? key}) : super(key: key);
+class SearchScreen extends StatefulWidget {
+  SearchScreen({Key? key}) : super(key: key);
+
+  @override
+  _SearchScreenState createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  late TextEditingController controller;
+  final SearchController searchController =
+      Get.put(SearchController());
+
+
+  @override
+  void initState() {
+    controller = TextEditingController();
+    super.initState();
+  }
+
+  void searchStringChanged(String searchString) {
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +50,16 @@ class SearchScreen extends StatelessWidget {
                   child: Container(
                       width: 320,
                       padding: const EdgeInsets.all(12.0),
-                      child: const TextField(
+                      child: TextField(
+                        onChanged: (value) {
+                          if (value.length >= 2) {
+                           searchController.search(value);
+                          }
+                        },
+                        controller: controller,
                         autofocus: false,
                         autocorrect: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Search for cat breed...',
                           prefixIcon: Icon(
                             CupertinoIcons.search,

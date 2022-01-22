@@ -21,7 +21,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
   }
 
   List<Widget> _buildScreens() {
-    return [ExplorationScreen(), const SearchScreen()];
+    return [ExplorationScreen(), SearchScreen()];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {

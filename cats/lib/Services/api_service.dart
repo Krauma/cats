@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:cats/Exploration/Models/cat.dart';
 import 'package:cats/Exploration/Models/cat_vote.dart';
+import 'package:cats/Search/Models/cat_search_result.dart';
 import 'package:cats/Utils/constants.dart';
 import 'package:http/http.dart' as http;
 
@@ -32,5 +33,19 @@ class ApiService {
         },
         body: body);
     return response.statusCode;
+  }
+
+  static Future<List<CatSearchResult>?> search(String searchString) async {
+    var response = await client.get(
+        Uri.parse(Constants.baseUrl + '/breeds/search?q=' + searchString),
+        headers: {
+          'x-api-key': Constants.apiKey,
+        });
+    if (response.statusCode == 200) {
+      var jsonString = response.body;
+      return searchedCatsFromJson(jsonString);
+    } else {
+      return null;
+    }
   }
 }
