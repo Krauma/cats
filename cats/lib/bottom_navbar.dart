@@ -1,5 +1,5 @@
 import 'package:cats/Exploration/Views/exploration_screen.dart';
-import 'package:cats/Search/Views/Search_screen.dart';
+import 'package:cats/Search/Views/search_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';

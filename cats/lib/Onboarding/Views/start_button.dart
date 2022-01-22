@@ -1,4 +1,3 @@
-import 'package:cats/Exploration/Views/exploration_screen.dart';
 import 'package:cats/Utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +14,7 @@ class StartButton extends StatelessWidget {
       child: Align(
         alignment: Alignment.bottomCenter,
         child: ElevatedButton(
-            child: const Text("Show cats!"),
+            child: const Text("Let's start!"),
             onPressed: () {
               Get.to(() => const BottomNavbar());
             },

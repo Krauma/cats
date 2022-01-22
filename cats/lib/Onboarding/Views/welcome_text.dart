@@ -20,7 +20,7 @@ class WelcomeText extends StatelessWidget {
               'Explore cats',
               style: GoogleFonts.outfit(color: Colors.white, fontSize: 36),
             ),
-            Text('Vote the cats to see more furries',
+            Text('Play around and find some cute cats!',
                 style: GoogleFonts.outfit(
                     color: Colors.white,
                     fontSize: 16,
