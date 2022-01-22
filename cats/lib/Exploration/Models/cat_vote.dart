@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class CatVote {
   String imageId;
   int value;

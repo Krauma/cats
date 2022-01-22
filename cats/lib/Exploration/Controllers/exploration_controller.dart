@@ -42,13 +42,5 @@ class ExplorationController extends GetxController {
     var catVote = CatVote(imageId: id, value: isfavorite ? 1 : 0);
     isFavorite(isfavorite);
     voteCat(catVote);
- 
-
- /*   Timer(Duration(seconds: 1), () {
-      setState(() {
-        _isShowingConfirmation = false;
-        explorationController.fetchCat();
-      });
-    });*/
   }
 }

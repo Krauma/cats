@@ -16,7 +16,7 @@ class StartButton extends StatelessWidget {
         child: ElevatedButton(
             child: const Text("Show cats!"),
             onPressed: () {
-              Get.to(() => const ExplorationScreen());
+              Get.to(() => ExplorationScreen());
             },
             style: ElevatedButton.styleFrom(
                 elevation: 7,
