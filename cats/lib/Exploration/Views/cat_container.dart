@@ -10,7 +10,7 @@ class CatContailer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(4, 16, 4, 20),
+      padding: const EdgeInsets.fromLTRB(4, 24, 4, 20),
       child: Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height / 1.8,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ExplorationClipper extends CustomClipper<Path> {
+class SharedClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
         var path = Path();

@@ -1,14 +1,14 @@
 import 'package:cats/Utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'exploration_clipper.dart';
+import 'shared_clipper.dart';
 
-class ExplorationClipPath extends StatelessWidget {
-  const ExplorationClipPath({Key? key}) : super(key: key);
+class SharedClipPath extends StatelessWidget {
+  const SharedClipPath({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper: ExplorationClipper(),
+      clipper: SharedClipper(),
       child: Container(
         height: MediaQuery.of(context).size.height / 2.7,
         decoration: BoxDecoration(
