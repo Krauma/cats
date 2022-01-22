@@ -3,6 +3,7 @@ import 'package:cats/Utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
+import '../../bottom_navbar.dart';
 
 class StartButton extends StatelessWidget {
   const StartButton({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class StartButton extends StatelessWidget {
         child: ElevatedButton(
             child: const Text("Show cats!"),
             onPressed: () {
-              Get.to(() => ExplorationScreen());
+              Get.to(() => const BottomNavbar());
             },
             style: ElevatedButton.styleFrom(
                 elevation: 7,

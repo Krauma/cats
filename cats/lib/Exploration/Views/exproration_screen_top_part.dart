@@ -17,21 +17,11 @@ class ExplorationSreenTopPart extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              IconButton(
-                  onPressed: Get.back,
-                  icon: const Icon(
-                    Icons.close,
-                    color: Colors.white,
-                  )),
-              Text('Explore kittens',
-                  style: GoogleFonts.outfit(
-                      color: Colors.white,
-                      fontSize: 26,
-                      fontWeight: FontWeight.w400)),
-            ],
-          ),
+          Text('Explore kittens',
+              style: GoogleFonts.outfit(
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontWeight: FontWeight.w400)),
           CatContailer(explorationController: explorationController),
         ],
       ),
